@@ -1,17 +1,18 @@
-/* =========================
-   NAVIGATION (Responsive)
-========================= */
-const menuButton = document.getElementById("menu-toggle");
-const nav = document.getElementById("main-nav");
+// ===== Navigation Toggle =====
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('main-nav');
 
-menuButton.addEventListener("click", () => {
-  nav.classList.toggle("open");
+  // Make sure nav is hidden by default on mobile
+  nav.classList.add('hidden');
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('hidden') === false; // toggle hidden class
+    menuToggle.setAttribute('aria-expanded', isOpen); // update ARIA
+  });
 });
 
 
-/* =========================
-   DATES (Footer)
-========================= */
 const yearSpan = document.getElementById("currentyear");
 const lastModifiedPara = document.getElementById("lastModified");
 
@@ -19,9 +20,8 @@ yearSpan.textContent = new Date().getFullYear();
 lastModifiedPara.textContent = `Last Modified: ${document.lastModified}`;
 
 
-/* =========================
-   COURSES DATA
-========================= */
+
+
 const courses = [
   { subject: 'CSE', number: 110, title: 'Programming Building Blocks', credits: 2, completed: false },
   { subject: 'WDD', number: 130, title: 'Web Fundamentals', credits: 3, completed: false },
@@ -33,14 +33,12 @@ const courses = [
 ];
 
 
-/* =========================
-   COURSE DISPLAY + LOGIC
-========================= */
+
 const courseList = document.getElementById("course-list");
 const totalCredits = document.getElementById("total-credits");
 const filterButtons = document.querySelectorAll(".filters button");
 
-// Display courses
+
 function displayCourses(courseArray) {
   courseList.innerHTML = "";
 

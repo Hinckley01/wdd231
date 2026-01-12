@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - WDD231 Course Home</title>
+    <title>Hinckley Ohaegbulem - WDD231 Course Home</title>
     <meta name="description" content="Home page for WDD231: Web Frontend Development I">
     <meta name="author" content="Hinckley Ohaegbulem">
     
@@ -16,12 +16,16 @@
     <script src="scripts/main.js" defer></script>
 </head>
 <body>
-    <header>
-        <img src="images/site logo.jpeg" alt="Site Logo">
-        <span>Hinckley Ohaegbulem</span>
-        <button id="menu-toggle" aria-label="Open menu">☰</button>
-    </header>
-    
+   <header class="site-header">
+  <div class="brand">
+    <img src="images/site-logo.jpeg" alt="Hinckley Ohaegbulem logo" width="48" height="48">
+    <span class="name">Hinckley Ohaegbulem</span>
+  </div>
+  <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    ☰
+  </button>
+</header>
+
     <nav id="main-nav">
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
@@ -35,7 +39,12 @@
         
         <section id="about">
             <h2>About Me</h2>
-            <img src="images/myself.jpeg" alt="Your profile photo">
+           <img 
+  src="images/myself.jpeg" 
+  alt="Profile photo of Hinckley Ohaegbulem"
+  width="300"
+  height="300"
+  loading="lazy">
             <p>Hi, I'm Hinckley Ohaegbulem, a passionate web development student based in Lagos, Nigeria. 👋
 I'm enthusiastic about building clean, responsive websites and exploring frontend technologies. When I'm not coding 💻, you'll find me shooting hoops on the basketball court 🏀 or diving into epic gaming sessions 🎮.
 Always eager to learn, collaborate, and create.</p>
@@ -66,11 +75,12 @@ Always eager to learn, collaborate, and create.</p>
     
     <footer>
         <div class="social">
-            <a href="https://hinckley01.github.io/Wdd231/" target="_blank"><img src="images/github logo2.jpeg" alt="GitHub"></a>
-            <a href="https://www.linkedin.com/in/hinckley-ohaegbulem-615145282/" target="_blank"><img src="images/linkedin logo.jpeg" alt="LinkedIn"></a>
+            <a href="https://hinckley01.github.io/wdd231/" target="_blank"><img src="images/github-logo2.jpeg" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/hinckley-ohaegbulem-615145282/" target="_blank"><img src="images/linkedin-logo.jpeg" alt="LinkedIn"></a>
         
         </div>
-        <p>&copy; <span id="currentyear"></span> Hinckley Ohaebulem | Lagos, Nigeria</p>
+        <p>&copy; <span id="currentyear"></span> Hinckley Ohaegbulem | Lagos, Nigeria</p>
+
         <p id="lastModified"></p>
     </footer>
 </body>
