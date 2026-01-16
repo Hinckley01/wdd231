@@ -1,0 +1,9 @@
+[
+  {"name":"Zenith Tech","address":"12 Victoria Island, Lagos","phone":"+234 801 234 5678","website":"https://www.zenithbank.com","image":"business7.jpeg","level":3},
+  {"name":"Green Farms","address":"Ikeja, Lagos","phone":"+234 802 456 7890","website":"https://www.greenfarm.ng","image":"business1.jpeg","level":2},
+  {"name":"Blue Ocean Logistics","address":"Apapa, Lagos","phone":"+234 803 987 6543","website":"https://www.blueoceanlogistics.com","image":"business3.jpeg","level":1},
+  {"name":"Urban Wear","address":"Lekki, Lagos","phone":"+234 804 555 1234","website":"https://www.urbanwear.ng","image":"business.4.jpeg","level":2},
+  {"name":"Nova Finance","address":"Yaba, Lagos","phone":"+234 805 333 8888","website":"https://www.novafinance.com","image":"business5.jpeg","level":3},
+  {"name":"Fresh Bites","address":"Surulere, Lagos","phone":"+234 806 222 9999","website":"https://www.freshbites.ng","image":"business2.jpeg","level":1},
+  {"name":"Skyline Builders","address":"Ajah, Lagos","phone":"+234 807 111 0000","website":"https://www.skylinebuilders.com","image":"business6.jpeg","level":2}
+]

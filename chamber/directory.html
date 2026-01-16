@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lagos Chamber of Commerce | Directory</title>
+  <meta name="description" content="Business directory for the Lagos Chamber of Commerce">
+  <meta name="author" content="Hinckley Ohaegbulem">
+
+
+  <link rel="icon" href="images/favicon.ico">
+
+  
+  <meta property="og:title" content="Lagos Chamber of Commerce">
+  <meta property="og:description" content="Connecting businesses in Lagos">
+  <meta property="og:image" content="images/social-preview.png">
+  <meta property="og:url" content="https://hinckley01.github.io/wdd231/chamber/directory.html">
+
+  <link rel="stylesheet" href="styles/chamber.css">
+
+  <script src="scripts/directory.js" defer></script>
+
+</head>
+
+
+<body>
+    <header>
+        <h1>Lagos Chamber of Commerce</h1>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="directory.html"  class="active">Directory</a></li>
+                <li><a href="#">Join</a></li>
+                <li><a href="#">Discover</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <section class="controls">
+            <h2>Business Directory</h2>
+            <div class="view-buttons">
+                <button id="grid" aria-pressed="true">Grid View</button>
+                <button id="list" aria-pressed="false">list View</button>
+            </div>
+        </section>
+
+
+        <section id="members" class="grid view" aria-label="Business members Directory"></section>
+    </main> 
+
+    <footer>
+        <p>Lagos Chamber of Commerce</p>
+         <p>📍 Lagos, Nigeria | 📞 +234 9076310026</p>
+         <p>Hinckley Ohaegbulem | WDD 231</p>
+            <p>© <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>
