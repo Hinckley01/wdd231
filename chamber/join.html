@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="styles/normalize.css"/>
   <link rel="stylesheet" href="styles/join.css"/>
 
+
   <link rel="icon" href="favicon.png" type="image/png">
+
 
   <script src="scripts/style.js" defer></script>
   <script src="scripts/join.js" defer></script>
@@ -20,7 +22,7 @@
 <body>
 <header>
   <div class="logo">
-    <img src="images/rookie-logo.jpg" alt="Rookies Logo" />
+    <img src="images/rookie-logo.jpg" alt="Rookies Logo">
     <div class="site-name">
       <h1>Rookies</h1>
       <p>Your Ultimate Gaming Hub</p>
@@ -41,36 +43,44 @@
 
 <main class="join-page">
   <h2>Join the Rookies Community</h2>
-  <p class="intro">
+
+<p cl
+  div class="join-layout">
+
+
+ <p class="intro">
     Rookies is a gaming and esports community built for players who want to learn,
     compete, and connect. Choose a membership that fits your goals and level up with us.
   </p>
-
-  <div class="join-layout">
-
-
+<div class="join-layout">
     <form method="get" action="thankyou.html" class="membership-form">
+
       <fieldset>
         <legend>Personal Information</legend>
 
         <label>
           First Name
-          <input type="text" name="fname" autocomplete="given-name" required>
+          <input type="text" name="fname" title="First Name"
+            autocomplete="given-name" required>
         </label>
 
         <label>
           Last Name
-          <input type="text" name="lname" autocomplete="family-name" required>
+          <input type="text" name="lname" title="Last Name"
+            autocomplete="family-name" required>
         </label>
 
         <label>
           Email Address
-          <input type="email" name="email" autocomplete="email" required>
+          <input type="email" name="email" title="Email Address"
+            placeholder="example@email.com"
+            autocomplete="email" required>
         </label>
 
         <label>
           Mobile Phone
-          <input type="tel" name="phone" autocomplete="tel" required>
+          <input type="tel" name="phone" title="Mobile Phone"
+            autocomplete="tel" required>
         </label>
       </fieldset>
 
@@ -78,24 +88,34 @@
         <legend>Membership Details</legend>
 
         <label>
-          Team / Organization Name
-          <input type="text" name="organization" autocomplete="organization" required>
+          Organization / Team Name
+          <input type="text" name="organization" title="Organization Name"
+            autocomplete="organization" required>
+        </label>
+
+        <!-- REQUIRED TITLE FIELD -->
+        <label>
+          Title / Position
+          <input type="text" name="title" title="Title or Position"
+            pattern="[A-Za-z\s\-]{7,}"
+            autocomplete="organization-title"
+            required>
         </label>
 
         <label>
           Membership Level
-          <select name="membership" required>
+          <select name="membership" title="Membership Level" required>
             <option value="">Select a level</option>
-            <option value="np">NP Membership</option>
-            <option value="bronze">Bronze Membership</option>
-            <option value="silver">Silver Membership</option>
-            <option value="gold">Gold Membership</option>
+            <option value="NP Membership">NP Membership</option>
+            <option value="Bronze Membership">Bronze Membership</option>
+            <option value="Silver Membership">Silver Membership</option>
+            <option value="Gold Membership">Gold Membership</option>
           </select>
         </label>
 
         <label>
           Description
-          <textarea name="description"
+          <textarea name="description" title="Description"
             placeholder="Tell us about your gaming interests or goals..."></textarea>
         </label>
 
@@ -105,39 +125,40 @@
       <input type="submit" value="Join Rookies">
     </form>
 
-   
+    <!-- MEMBERSHIP CARDS -->
     <section class="membership-cards">
       <article class="card">
         <h3>NP Membership</h3>
         <p>Free access for non-profit gaming groups.</p>
-        <button data-modal="np">View Benefits</button>
+        <button data-modal="np" aria-haspopup="dialog">View Benefits</button>
       </article>
 
       <article class="card">
         <h3>Bronze Membership</h3>
-        <p>Perfect for casual players joining the community.</p>
-        <button data-modal="bronze">View Benefits</button>
+        <p>Perfect for casual players.</p>
+        <button data-modal="bronze" aria-haspopup="dialog">View Benefits</button>
       </article>
 
       <article class="card">
         <h3>Silver Membership</h3>
-        <p>Enhanced exposure and competitive advantages.</p>
-        <button data-modal="silver">View Benefits</button>
+        <p>More exposure and competitive perks.</p>
+        <button data-modal="silver" aria-haspopup="dialog">View Benefits</button>
       </article>
 
       <article class="card">
         <h3>Gold Membership</h3>
-        <p>Premium access for serious esports competitors.</p>
-        <button data-modal="gold">View Benefits</button>
+        <p>Premium access for serious competitors.</p>
+        <button data-modal="gold" aria-haspopup="dialog">View Benefits</button>
       </article>
     </section>
   </div>
 
+  <!-- MODALS -->
   <dialog id="np">
     <h4>NP Membership Benefits</h4>
     <ul>
       <li>Community directory listing</li>
-      <li>Access to public gaming events</li>
+      <li>Access to public events</li>
     </ul>
     <button class="close">Close</button>
   </dialog>
@@ -145,8 +166,8 @@
   <dialog id="bronze">
     <h4>Bronze Membership Benefits</h4>
     <ul>
-      <li>Event participation discounts</li>
-      <li>Online community access</li>
+      <li>Event discounts</li>
+      <li>Community access</li>
     </ul>
     <button class="close">Close</button>
   </dialog>
@@ -154,8 +175,8 @@
   <dialog id="silver">
     <h4>Silver Membership Benefits</h4>
     <ul>
-      <li>Featured team profile</li>
-      <li>Priority tournament registration</li>
+      <li>Featured profile</li>
+      <li>Priority tournaments</li>
       <li>Training sessions</li>
     </ul>
     <button class="close">Close</button>
@@ -165,13 +186,14 @@
     <h4>Gold Membership Benefits</h4>
     <ul>
       <li>Homepage spotlight</li>
-      <li>Exclusive esports events</li>
-      <li>Maximum community exposure</li>
+      <li>Exclusive events</li>
+      <li>Maximum exposure</li>
     </ul>
     <button class="close">Close</button>
   </dialog>
 </main>
 
+<!-- FOOTER (REQUIRED FOR CONSISTENCY) -->
 <footer>
   <div class="footer-content">
     <div>
@@ -183,9 +205,9 @@
     </div>
 
     <div class="social">
-      <img src="images/icons8-youtube.svg" alt="YouTube">
-      <img src="images/icons8-twitter.svg" alt="Twitter">
-      <img src="images/icons8-linkedin.svg" alt="LinkedIn">
+      <img src="images/icons8-youtube.svg" alt="YouTube" loading="lazy">
+      <img src="images/icons8-twitter.svg" alt="Twitter" loading="lazy">
+      <img src="images/icons8-linkedin.svg" alt="LinkedIn" loading="lazy">
     </div>
 
     <div>
