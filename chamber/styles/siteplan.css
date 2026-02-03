@@ -1,0 +1,113 @@
+/* ===============================
+   Rookies – W05 Site Plan CSS
+   =============================== */
+
+/* Color Variables */
+:root {
+  --primary-color: #0f172a;   /* Dark Blue */
+  --secondary-color: #22c55e; /* Green */
+  --accent-color: #38bdf8;    /* Light Blue */
+  --background-color: #f8fafc;
+  --card-bg: #ffffff;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.3rem;
+}
+
+header p {
+  margin-top: 0.5rem;
+  color: var(--accent-color);
+}
+
+/* Main Content */
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+/* Sections */
+section {
+  background-color: var(--card-bg);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-left: 6px solid var(--secondary-color);
+  border-radius: 8px;
+}
+
+section h2 {
+  color: var(--secondary-color);
+  margin-top: 0;
+}
+
+/* Lists */
+ul {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Wireframes */
+.wireframe {
+  font-family: monospace;
+  background-color: #e5e7eb;
+  padding: 1rem;
+  border-radius: 6px;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Links */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Touch */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  section {
+    padding: 1.2rem;
+  }
+}
