@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover gaming lounges and tech hubs connected to the Rookies community.">
+  <meta name="author" content="Hinckley Ohaegbulem">
+
+  <title>Discover | Rookies</title>
+
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/chamber.css">
+  <link rel="stylesheet" href="styles/discover.css">
+
+  <link rel="icon" href="favicon.png" type="image/png">
+
+  <script src="scripts/style.js" defer></script>
+  <script src="scripts/discover.js" defer></script>
+</head>
+
+<body>
+<header>
+  <div class="logo">
+    <img src="images/rookie-logo.jpg" alt="Rookies logo" width="60" height="60">
+    <div class="site-name">
+      <h1>Rookies</h1>
+      <p>Your Ultimate Gaming Hub</p>
+    </div>
+  </div>
+
+  <button id="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+  <nav id="nav">
+    <ul id="menu" class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="directory.html">Games</a></li>
+      <li><a href="join.html">Join</a></li>
+      <li><a href="discover.html" class="active">Discover</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="discover-main">
+  <h2 class="page-title">Places Gamers Hang Out</h2>
+
+  <div class="discover-layout">
+    <aside class="visit-box">
+      <h3>Your Visit Info</h3>
+      <p id="visitMessage">Loading visit details...</p>
+    </aside>
+
+    <section class="locations">
+      <h3>Gaming & Tech Locations</h3>
+      <div id="cardsContainer" class="cards-grid">
+       
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div>
+      <p>
+        <strong>Rookies</strong><br>
+        123 Game Street, Lagos, Nigeria<br>
+        Email: support@rookiesgaming.com<br>
+        Phone: +234 9076 31 0026
+      </p>
+    </div>
+
+    <div class="social">
+      <img src="images/icons8-youtube.svg" alt="YouTube">
+      <img src="images/icons8-twitter.svg" alt="Twitter">
+      <img src="images/icons8-linkedin.svg" alt="LinkedIn">
+    </div>
+
+    <div>
+      <p>
+        WDD231 Class Project<br>
+        Hinckley Ohaegbulem<br>
+        &copy; <span id="year"></span> Rookies<br>
+        Last Modified: <span id="lastModified"></span>
+      </p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

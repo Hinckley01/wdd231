@@ -1,0 +1,52 @@
+{
+  "locations": [
+    {
+      "name": "Pixel Arena",
+      "address": "Victoria Island, Lagos",
+      "description": "An esports arena with high-end PCs and regular competitive events.",
+      "image": "images/board-game-haven.webp"
+    },
+    {
+      "name": "GameZone Lounge",
+      "address": "Ikeja City Mall",
+      "description": "A relaxed gaming space with consoles and multiplayer games.",
+      "image": "images/game-dev-hub.webp"
+    },
+    {
+      "name": "Nexus Tech Hub",
+      "address": "Yaba, Lagos",
+      "description": "A tech-focused hub where gamers and developers connect.",
+      "image": "images/esports-fanatics.webp"
+    },
+    {
+      "name": "XP Gaming Café",
+      "address": "Lekki Phase 1",
+      "description": "Late-night gaming café with fast internet and snacks.",
+      "image": "esports-arena (1).webp"
+    },
+    {
+      "name": "Elite Console House",
+      "address": "Surulere",
+      "description": "Console gaming space popular for FIFA and Call of Duty.",
+      "image": "images/gaming-lounge.webp"
+    },
+    {
+      "name": "Cyber Battle Zone",
+      "address": "Ajah Road",
+      "description": "Competitive training space for serious esports players.",
+      "image": "images/tech-emporium.webp"
+    },
+    {
+      "name": "Arcade Nation",
+      "address": "Alausa",
+      "description": "Arcade-style games mixed with modern consoles.",
+      "image": "images/retro-arcade.webp"
+    },
+    {
+      "name": "Rookies HQ",
+      "address": "Game Street, Lagos",
+      "description": "Main Rookies community location for events and meetups.",
+      "image": "images/gametech.webp"
+    }
+  ]
+}
