@@ -1,10 +1,49 @@
 
 
 :root {
-  --bg-light: #f4f6f8;
+
   --card-bg: #121212;
+
   --accent: #4f7cff;
+
   --text-muted: #b3b3b3;
+}
+
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+}
+
+.skip-link:focus {
+  left: 10px;
+  top: 10px;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+img {
+  display: block;
+}
+
+a:focus,
+button:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .discover-main {
@@ -15,94 +54,131 @@
 
 .page-title {
   text-align: center;
-  margin-bottom: 2.5rem;
-  font-size: 1.8rem;
-  letter-spacing: 0.5px;
+
+  margin-bottom: 2rem;
+
 }
-
-
 
 .discover-layout {
   display: grid;
-  grid-template-columns: 1fr;
+
   gap: 2rem;
 }
 
 
 .visit-box {
-  background: linear-gradient(135deg, #ffffff, #eef1f5);
-  padding: 1.2rem 1.3rem;
+  background: #f4f6f8;
+
+  padding: 1rem;
   border-radius: 12px;
   font-weight: 500;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
-
-.visit-box h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-}
-
 
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
   gap: 1.5rem;
 }
 
 
 
 .location-card {
-  background-color: var(--card-bg);
-  color: #ffffff;
+  display: grid;
+  grid-template-areas:
+    "image"
+    "title"
+    "address"
+    "description"
+    "button";
+
+  background: var(--card-bg);
+
+  color: #fff;
   border-radius: 16px;
-  padding: 1.1rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  padding: 1rem;
 }
 
-.location-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
-}
+.location-card figure {
 
+  grid-area: image;
+
+  margin: 0;
+
+}
 
 
 .location-card img {
   width: 100%;
-  height: 165px;
+  height: 180px;
   object-fit: cover;
   border-radius: 12px;
-  margin-bottom: 0.7rem;
+
 }
 
 
 .location-card h4 {
-  margin: 0.4rem 0 0.25rem;
-  font-size: 1.1rem;
-  letter-spacing: 0.3px;
+  grid-area: title;
+  margin: 0.6rem 0 0.2rem;
 }
 
 .location-card .address {
+  grid-area: address;
   font-size: 0.85rem;
   color: var(--text-muted);
-  margin-bottom: 0.4rem;
+  
 }
 
-.location-card p {
+.location-card .description {
+  grid-area: description;
   font-size: 0.95rem;
   line-height: 1.4;
+}
+
+.learn-btn {
+  grid-area: button;
+  margin-top: 0.8rem;
+  padding: 0.5rem;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 
 
 @media (min-width: 768px) {
+
   .discover-layout {
     grid-template-columns: 1fr 3fr;
-    align-items: start;
   }
 
-  .page-title {
-    font-size: 2rem;
+  .location-card {
+    grid-template-areas:
+      "image title"
+      "image address"
+      "image description"
+      "image button";
+    grid-template-columns: 1fr 1.5fr;
+    gap: 0.8rem;
+    transition: transform 0.3s ease;
+  }
+
+  .location-card:hover {
+    transform: translateY(-6px);
+  }
+}
+
+
+@media (min-width: 1200px) {
+
+  .location-card {
+    grid-template-areas:
+      "title title"
+      "image image"
+      "address description"
+      "button button";
   }
 }

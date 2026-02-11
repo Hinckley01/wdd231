@@ -5,54 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Discover gaming lounges and tech hubs connected to the Rookies community.">
   <meta name="author" content="Hinckley Ohaegbulem">
+  <meta name="theme-color" content="#121212">
+
+  <!-- Open Graph SEO -->
+  <meta property="og:title" content="Discover Gaming Locations | Rookies">
+  <meta property="og:description" content="Explore top gaming lounges and esports hubs in Lagos.">
+  <meta property="og:image" content="images/rookie-logo.webp">
+  <meta property="og:type" content="website">
 
   <title>Discover | Rookies</title>
+
+  <!-- Preload Logo for LCP -->
+  <link rel="preload" as="image" href="images/rookie-logo.webp">
 
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/chamber.css">
   <link rel="stylesheet" href="styles/discover.css">
 
-  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="images/favicon.webp" type="image/webp">
 
-  <script src="scripts/style.js" defer></script>
+
   <script src="scripts/discover.js" defer></script>
 </head>
 
 <body>
+
+<a href="#mainContent" class="skip-link">Skip to main content</a>
+
 <header>
   <div class="logo">
     <img src="images/rookie-logo.jpg" alt="Rookies logo" width="60" height="60">
-    <div class="site-name">
+    <div>
       <h1>Rookies</h1>
       <p>Your Ultimate Gaming Hub</p>
     </div>
   </div>
 
-  <button id="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+  <button id="menu-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="nav">
+    &#9776;
+  </button>
 
   <nav id="nav">
-    <ul class="nav-links">
+    <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="directory.html">Games</a></li>
       <li><a href="join.html">Join</a></li>
-      <li><a href="discover.html" class="active">Discover</a></li>
+      <li><a href="discover.html" class="active" aria-current="page">Discover</a></li>
     </ul>
   </nav>
 </header>
 
-<main class="discover-main">
+<main id="mainContent" class="discover-main">
   <h2 class="page-title">Places Gamers Hang Out</h2>
 
   <div class="discover-layout">
+
     <aside class="visit-box">
       <h3>Your Visit Info</h3>
       <p id="visitMessage">Loading visit details...</p>
     </aside>
 
     <section class="locations">
-      <h3>Gaming & Tech Locations</h3>
+      <h3 class="sr-only">Gaming Locations</h3>
       <div id="cardsContainer" class="cards-grid"></div>
     </section>
+
   </div>
 </main>
 
@@ -68,9 +88,9 @@
     </div>
 
     <div class="social">
-      <img src="images/icons8-youtube.svg" alt="YouTube">
-      <img src="images/icons8-twitter.svg" alt="Twitter">
-      <img src="images/icons8-linkedin.svg" alt="LinkedIn">
+      <img src="images/icons8-youtube.svg" alt="YouTube" width="24" height="24">
+      <img src="images/icons8-twitter.svg" alt="Twitter" width="24" height="24">
+      <img src="images/icons8-linkedin.svg" alt="LinkedIn" width="24" height="24">
     </div>
 
     <div>
@@ -83,5 +103,6 @@
     </div>
   </div>
 </footer>
+
 </body>
 </html>
