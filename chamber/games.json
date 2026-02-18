@@ -1,0 +1,17 @@
+[
+  {"name":"Valorant","genre":"FPS","platform":"PC","rating":"4.8","image":"valorant.jpg"},
+  {"name":"FIFA 24","genre":"Sports","platform":"PS5","rating":"4.6","image":"fifa24.jpg"},
+  {"name":"Call of Duty MW3","genre":"FPS","platform":"PC/Console","rating":"4.7","image":"mw3.jpg"},
+  {"name":"Fortnite","genre":"Battle Royale","platform":"All Platforms","rating":"4.5","image":"fortnite.jpg"},
+  {"name":"EA FC 24","genre":"Sports","platform":"PS5","rating":"4.4","image":"eafc24.jpg"},
+  {"name":"Apex Legends","genre":"Battle Royale","platform":"PC/Console","rating":"4.6","image":"apex.jpg"},
+  {"name":"Minecraft","genre":"Sandbox","platform":"All Platforms","rating":"4.9","image":"minecraft.jpg"},
+  {"name":"League of Legends","genre":"MOBA","platform":"PC","rating":"4.7","image":"lol.jpg"},
+  {"name":"PUBG","genre":"Battle Royale","platform":"PC/Mobile","rating":"4.3","image":"pubg.jpg"},
+  {"name":"Rocket League","genre":"Sports","platform":"All Platforms","rating":"4.5","image":"rocketleague.jpg"},
+  {"name":"GTA V","genre":"Open World","platform":"PC/Console","rating":"4.9","image":"gtav.jpg"},
+  {"name":"Elden Ring","genre":"RPG","platform":"PC/Console","rating":"4.8","image":"eldenring.jpg"},
+  {"name":"Overwatch 2","genre":"FPS","platform":"All Platforms","rating":"4.4","image":"overwatch2.jpg"},
+  {"name":"Cyberpunk 2077","genre":"RPG","platform":"PC/Console","rating":"4.6","image":"cyberpunk2077.jpg"},
+  {"name":"Rainbow Six Siege","genre":"Tactical FPS","platform":"PC/Console","rating":"4.5","image":"r6siege.jpg"}
+]

@@ -1,83 +1,82 @@
-// ===== Fetch Members Safely =====
-async function getMembers() {
-    try {
-        // Make sure this path matches exactly your folder structure
-        const res = await fetch('scripts/data/members.json');
+// ===== Hamburger Menu =====
+const menuBtn = document.getElementById("menu-toggle");
+const navList = document.getElementById("nav-list");
 
-        // If fetch fails (404, etc.)
-        if (!res.ok) {
-            throw new Error(`Cannot fetch members.json (HTTP status ${res.status})`);
-        }
+menuBtn.addEventListener("click", () => {
+  navList.classList.toggle("open");
+  const expanded = menuBtn.getAttribute("aria-expanded") === "true";
+  menuBtn.setAttribute("aria-expanded", !expanded);
+});
 
-        const members = await res.json();
+// ===== Fetch Games =====
+async function getGames() {
+  try {
+    const response = await fetch("./games.json");
 
-        // Check that JSON is an array
-        if (!Array.isArray(members)) {
-            throw new Error('members.json is not a valid array.');
-        }
+    if (!response.ok) throw new Error("Failed to fetch games data.");
 
-        return members;
-    } catch (err) {
-        // Print error in console
-        console.error('Error loading members:', err);
-        // Alert user clearly
-        alert(`Error loading members:\n${err.message}\n\nCheck that your JSON file exists and the path is correct!`);
-        // Return empty array to prevent breaking the page
-        return [];
-    }
+    const games = await response.json();
+    displayGames(games);
+
+  } catch (error) {
+    console.error("Error:", error);
+    document.getElementById("gamesContainer").innerHTML = 
+      "<p style='text-align:center; color:red;'>Failed to load games. Check console.</p>";
+  }
 }
 
-// ===== Display Members =====
-async function displayMembers() {
-    const members = await getMembers();
-    const container = document.getElementById('members');
+// ===== Display Games =====
+function displayGames(games) {
+  const container = document.getElementById("gamesContainer");
 
-    if (!members.length) {
-        container.innerHTML = '<p style="color:red; text-align:center;">No members found. Check console for errors or JSON path.</p>';
-        return;
-    }
+  container.innerHTML = games.map(game => `
+    <article class="game-card">
+      <img src="images/${game.image}" 
+           alt="${game.name}" 
+           loading="lazy" 
+           width="300" 
+           height="200"
+           onerror="this.src='images/placeholder.jpg'">
+      <h3>${game.name}</h3>
+      <p><strong>Genre:</strong> ${game.genre}</p>
+      <p><strong>Platform:</strong> ${game.platform}</p>
+      <p><strong>Rating:</strong> ${game.rating}</p>
+      <button data-name="${game.name}" data-genre="${game.genre}">View Details</button>
+    </article>
+  `).join("");
 
-    container.innerHTML = members.map(member => {
-        // Use placeholder if image missing
-        const imgPath = member.image ? `images/${member.image}` : 'images/placeholder.png';
-        return `
-        <div class="member-card">
-            <img src="${imgPath}" alt="${member.name}" 
-                 onerror="this.src='images/placeholder.png'; console.warn('Missing image for ${member.name}')">
-            <h3>${member.name}</h3>
-            <p>${member.address}</p>
-            <p>📞 ${member.phone}</p>
-            <a href="${member.website}" target="_blank">Website</a>
-        </div>
-        `;
-    }).join('');
+  setupModal();
+}
+
+// ===== Modal Setup =====
+function setupModal() {
+  const modal = document.getElementById("gameModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalBody = document.getElementById("modalBody");
+  const closeModal = document.getElementById("closeModal");
+
+  document.querySelectorAll(".game-card button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      modalTitle.textContent = btn.dataset.name;
+      modalBody.textContent = `Genre: ${btn.dataset.genre}`;
+      modal.showModal();
+    });
+  });
+
+  closeModal.addEventListener("click", () => modal.close());
 }
 
 // ===== Grid/List Toggle =====
-function setupToggle() {
-    const gridBtn = document.getElementById('grid');
-    const listBtn = document.getElementById('list');
-    const container = document.getElementById('members');
-
-    gridBtn.addEventListener('click', () => {
-        container.classList.add('grid');
-        container.classList.remove('list');
-        gridBtn.setAttribute('aria-pressed', 'true');
-        listBtn.setAttribute('aria-pressed', 'false');
-    });
-
-    listBtn.addEventListener('click', () => {
-        container.classList.add('list');
-        container.classList.remove('grid');
-        gridBtn.setAttribute('aria-pressed', 'false');
-        listBtn.setAttribute('aria-pressed', 'true');
-    });
-}
-
-// ===== Initialize =====
-document.addEventListener('DOMContentLoaded', () => {
-    displayMembers();
-    setupToggle();
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('lastModified').textContent = document.lastModified;
+document.getElementById("grid").addEventListener("click", () => {
+  document.getElementById("gamesContainer").className = "grid";
 });
+document.getElementById("list").addEventListener("click", () => {
+  document.getElementById("gamesContainer").className = "list";
+});
+
+// ===== Footer Info =====
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("lastModified").textContent = document.lastModified;
+
+// Initialize
+getGames();
