@@ -116,49 +116,40 @@ h2 {
 }
 
 /* GAME CARDS */
-#gamesContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+#gamesContainer.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
 }
 
 #gamesContainer.list {
-    display: flex;
-    flex-direction: column;
+  display: block;
 }
 
 .game-card {
-    background-color: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.05);
-    text-align: center;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.game-card.animate {
-    opacity: 1;
-    transform: translateY(0);
+.game-card:hover {
+  transform: scale(1.03);
 }
 
-/* IMAGE IMPROVEMENTS */
+
 .game-card img {
-    width: 100%;
-    height: auto;
-    max-height: 160px;
-    object-fit: cover;
-    display: block;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-.game-card img.loaded {
-    opacity: 1;
-}
 
-/* CARD CONTENT */
+
+
 .game-card h3 {
     margin: 1rem 0 0.5rem;
     color: var(--primary);
@@ -182,6 +173,12 @@ h2 {
 .game-card button:hover {
     background-color: var(--cta-hover);
     transform: scale(1.05);
+}
+
+/* Fade-in animation for cards */
+.game-card.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* MODAL */
